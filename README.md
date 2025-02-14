@@ -26,6 +26,9 @@ To get started with BookHive:
 
 The Software Requirements Specification (SRS) document for BookHive is available in the repository. It provides detailed information about the platform's requirements, features, and system architecture. You can find it at `BookHive_SRS.md`.
 
+### Entity Relationship Diagram
+![ER Diagram](er-diagram.png)
+
 ## Project Structure
 
 We are using an atomic folder structure for our application:
