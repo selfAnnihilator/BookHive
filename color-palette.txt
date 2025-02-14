@@ -1,0 +1,50 @@
+🌿 Primary Colors (Warm & Inviting):
+
+    Primary: #5A3E36 (Rich Espresso) – For headers, buttons, and accents
+    Secondary: #A67C52 (Warm Tan) – For cards and highlights
+    Background: #F2E9E1 (Soft Cream) – For page backgrounds
+
+📚 Accent Colors (Literary Feel):
+
+    Accent 1: #C9A66B (Gold) – For highlights, notifications, and links
+    Accent 2: #6C8EA5 (Dusty Blue) – For interactive elements or buttons
+    Success: #4CAF50 (Green) – Success messages
+    Error: #E57373 (Red) – Error messages
+
+🖋️ Typography & Shadows:
+
+    Text Primary: #3C2F2F (Dark Brown) – For main text
+    Text Secondary: #6D5C4B (Muted Brown) – For subtitles or descriptions
+    Shadow: rgba(0, 0, 0, 0.1) – Soft shadows for cards
+
+Primary (Base of Logo): 📘 #5A3E36 (Rich Espresso – Warm, literary, and inviting)
+Secondary (Highlights or Outline): 🌾 #A67C52 (Warm Tan – Gives a bookish, classic feel)
+Accent (Hive/Icons): 🐝 #C9A66B (Golden Honey – Ties into the ‘Hive’ theme)
+Background (Soft Base): 📜 #F2E9E1 (Cream – Soft and neutral for backdrop or negative space)
+
+## font style
+
+📖 Primary Font (Headings & Logo):
+
+    Merriweather (Serif, Literary, Timeless)
+        Perfect for headings, the logo, and quotes.
+        Evokes the feel of book titles and literature.
+
+💬 Secondary Font (Body & Paragraphs):
+
+    Lora (Serif, Elegant, and Easy to Read)
+        Ideal for posts, comments, and longer texts.
+        Soft curves provide a literary feel.
+
+🛎️ Accent Font (Buttons, Tags, Badges):
+
+    Poppins (Sans-serif, Modern, Friendly)
+        Clean, modern, and suitable for buttons and tags.
+        Complements the serif fonts without clashing.
+
+🎨 Font Weights:
+
+    Headings (H1, H2): Merriweather – Bold (700)
+    Subheadings (H3, H4): Lora – Semi-bold (600)
+    Body Text: Lora – Regular (400)
+    Buttons/Tags: Poppins – Medium (500)
