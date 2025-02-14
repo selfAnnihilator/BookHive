@@ -1,0 +1,119 @@
+body {
+  background: #141414 !important;
+  color: white !important;
+}
+
+.hive_gradient {
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(2, 108, 85, 0.197),
+    rgba(0, 0, 0, 0),
+    rgba(2, 108, 85, 0.087)
+  ) !important;
+}
+
+.fixed-user-profile {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  margin-bottom: 8em;
+}
+
+.green-shade {
+  background: linear-gradient(98.88deg, #0dba63 6.27%, #107844 96.4%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.active-community-shade {
+  background: linear-gradient(101.96deg, #9fe645 8.1%, #c6920f 98.12%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.active-stores-shade {
+  background: linear-gradient(100.69deg, #81d4fa 12.84%, #db58f0 103.41%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
+}
+
+.rotate-item {
+  animation: rotate 9s linear infinite;
+}
+
+#qaEQTa {
+  background-color: #191919 !important;
+}
+
+.launchlist-widget {
+  background-color: #191919 !important;
+}
+
+.launchlist-widget iframe[data-key-id="qaEQTa"] {
+  background-color: #191919 !important;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite;
+}
+.loader::before,
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  animation: prixClipFix 2s linear infinite;
+}
+.loader::after {
+  border-color: #ff3d00;
+  animation:
+    prixClipFix 2s linear infinite,
+    rotate 0.5s linear infinite reverse;
+  inset: 6px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes prixClipFix {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+  }
+  25% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+  }
+  75% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
+}
