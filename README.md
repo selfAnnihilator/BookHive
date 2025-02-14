@@ -24,7 +24,10 @@ To get started with BookHive:
 
 ## Documentation
 
-The Software Requirements Specification (SRS) document for BookHive is available in the repository. It provides detailed information about the platform's requirements, features, and system architecture. You can find it at `BookHive_SRS.md`.
+The Software Requirements Specification (SRS) document for BookHive is available in the repository. It provides detailed information about the platform's requirements, features, and system architecture. See [BookHive_SRS.md](BookHive_SRS.md) for details.
+
+### Entity Relationship Diagram
+![ER Diagram](er-diagram.png)
 
 For more details about the database structure, see the [Entity Relationship Diagram](BookHive_ER_Diagram.md).
 
