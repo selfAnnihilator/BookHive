@@ -29,6 +29,10 @@ The Software Requirements Specification (SRS) document for BookHive is available
 ### Entity Relationship Diagram
 ![ER Diagram](er-diagram.png)
 
+## Landing Page Layout
+
+![Landing Page Layout](layout.png)
+
 ## Project Structure
 
 We are using an atomic folder structure for our application:
