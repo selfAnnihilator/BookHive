@@ -29,7 +29,25 @@ The Software Requirements Specification (SRS) document for BookHive is available
 ### Entity Relationship Diagram
 ![ER Diagram](images/er-diagram.png)
 
-For more details about the database structure, see the [Entity Relationship Diagram](document/markup/BookHive_ER_Diagram.md).
+## How to Run the Project
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   pnpm install
+   ```
+3. Start the development server:
+   ```bash
+   pnpm dev
+   ```
+4. Build the project for production:
+   ```bash
+   pnpm build
+   ```
+5. Start the production server:
+   ```bash
+   pnpm start
+   ```
 
 ## Contributing
 
