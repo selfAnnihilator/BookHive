@@ -26,7 +26,7 @@ const SignUp = () => {
 
   const mutation = useMutation({
     mutationFn: (formData: any) => {
-      return axiosInstance.post("/auth/create_account", formData);
+      return axiosInstance.post("/api/auth/register", formData);
     },
     onSuccess: (response) => {
       //@ts-ignore
@@ -147,8 +147,8 @@ const SignUp = () => {
           isErrorMessage={formik.errors.gender}
           size={"lg"}
           label="Gender">
-          <option value="Make">Male</option>
-          <option value="Femail">Female</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
         </SelectionField>
 
         <Buttons

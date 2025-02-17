@@ -1,10 +1,8 @@
 import axios from "axios";
+import { BASE_URL } from "../constants";
 
 const axiosInstance = axios.create({
-  baseURL:
-    process.env.NODE_ENV === "production"
-      ? process.env.NEXT_PUBLIC_DEFAULT_URL
-      : process.env.NEXT_PUBLIC_DEFAULT_URL,
+  baseURL: BASE_URL,
   timeout: 11000,
 });
 

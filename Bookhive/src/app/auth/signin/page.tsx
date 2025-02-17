@@ -23,7 +23,7 @@ const SignIn = () => {
 
   const mutation = useMutation({
     mutationFn: (formData: any) => {
-      return axiosInstance.post("/auth/login", formData);
+      return axiosInstance.post("/api/auth/login", formData);
     },
   });
 
