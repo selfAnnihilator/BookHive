@@ -39,12 +39,14 @@ const VerifyOtp = () => {
   const router = useRouter();
   const search = useSearchParams();
   const getEmail = search?.get("email");
+  const userData = JSON.parse(search?.get("userData") || "{}");
 
   const mutation = useMutation({
     mutationFn: (any) => {
-      return axiosInstance.post("/auth/verify_otp", {
+      return axiosInstance.post("/api/auth/verify-otp", {
         email: getEmail,
         otp: Number(otp),
+        userData
       });
     },
     onSuccess: (response) => {

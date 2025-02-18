@@ -1,5 +1,5 @@
 const express = require('express');
-const { registerUser, loginUser } = require('../controllers/authController');
+const { registerUser, loginUser, verifyOtp } = require('../controllers/authController');
 const router = express.Router();
 
 // @route   POST /api/auth/register
@@ -11,5 +11,10 @@ router.post('/register', registerUser);
 // @desc    Authenticate user & get token
 // @access  Public
 router.post('/login', loginUser);
+
+// @route   POST /api/auth/verify-otp
+// @desc    Verify OTP and complete registration
+// @access  Public
+router.post('/verify-otp', verifyOtp);
 
 module.exports = router;
