@@ -60,8 +60,9 @@ const VerifyOtp = () => {
         position: "top",
       });
 
-      setTimeout(() => router.replace("/dashboard"), 1000);
-      setCookie("_auth_token", "");
+      const token = response?.data?.token; // Assuming the token is returned on successful verification
+      setCookie("_auth_token", token); // Set the authentication token
+      setTimeout(() => router.replace("/dashboard"), 1000); // Redirect to dashboard
     },
     onError: (err: any) => {
       const { data } = err?.response;

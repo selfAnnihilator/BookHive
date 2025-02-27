@@ -73,7 +73,7 @@ const SignIn = () => {
 
   return (
     <AuthLayout
-      ctaPath="/auth/signnup"
+      ctaPath="/auth/signup"
       revarse={false}
       CTA="SIGN UP"
       layoutHeader={"Welcome Back"}>
