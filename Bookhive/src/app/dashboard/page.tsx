@@ -29,7 +29,26 @@ const Page = () => {
   const parseLocation = JSON.stringify(location);
   const [geo, setGeo] = useSessionStorage("user_location", location);
 
-  return <DashboardHome />;
+  return (
+  <>
+    <DashboardHome />
+    <button
+      style={{
+        position: 'fixed',
+        bottom: '20px',
+        right: '20px',
+        backgroundColor: '#0dba63', // Example color
+        color: 'white',
+        border: 'none',
+        borderRadius: '20px',
+        padding: '10px 15px',
+        cursor: 'pointer',
+      }}
+    >
+      +
+    </button>
+  </>
+);
 };
 
 export default Page;
