@@ -21,7 +21,7 @@ const ProviderWrapper: FC<IWrapper> = ({ children }) => {
           <ChakraProvider theme={theme}>
             <TanstackProvider>
               {children}
-              <ReactQueryDevtools />
+              {/* <ReactQueryDevtools /> */}
             </TanstackProvider>
           </ChakraProvider>
         </CacheProvider>
