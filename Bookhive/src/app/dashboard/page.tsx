@@ -7,27 +7,30 @@ import axios from "axios";
 import { useEffect } from "react";
 
 const Page = () => {
-  const { longitude, latitude } = useGeolocation();
-  const location = {
-    lat: latitude,
-    long: longitude,
-  };
-
   const dispatch = useDispatch();
 
   useEffect(() => {
     const getIp = async () => {
-      const { data } = await axios("https://ipapi.co/json/");
-
-      if (data) {
-        dispatch(updateLocationData(data));
+      try {
+        const { data } = await axios("https://ipapi.co/json/");
+        if (data) {
+          dispatch(updateLocationData(data));
+        } else {
+          // Fallback to a default location if the API request fails
+          const defaultLocation = { lat: 0, long: 0 }; // Example default location
+          dispatch(updateLocationData(defaultLocation));
+        }
+      } catch (error) {
+        console.error("Error fetching geolocation data:", error);
+        // Fallback to a default location if the request fails
+        const defaultLocation = { lat: 0, long: 0 }; // Example default location
+        dispatch(updateLocationData(defaultLocation));
       }
     };
     getIp();
   }, [dispatch]);
 
-  const parseLocation = JSON.stringify(location);
-  const [geo, setGeo] = useSessionStorage("user_location", location);
+  const [geo, setGeo] = useSessionStorage("user_location", { lat: 0, long: 0 });
 
   return (
   <>
@@ -44,6 +47,7 @@ const Page = () => {
         padding: '10px 15px',
         cursor: 'pointer',
       }}
+      onClick={() => window.location.href = '/create'}
     >
       +
     </button>
