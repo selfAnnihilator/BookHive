@@ -5,9 +5,12 @@ const connectDB = require('./config/db');
 
 const app = express();
 
+const postRoutes = require('./routes/postRoutes'); // Correct relative path for post routes
+
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use('/api', postRoutes); // Use post routes
 
 // Database connection
 connectDB();

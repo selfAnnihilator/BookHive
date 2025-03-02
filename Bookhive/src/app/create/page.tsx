@@ -1,17 +1,21 @@
 "use client";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { createPost } from "../../redux/slice/posts";
+import axios from "axios";
+import { createPost } from "../../redux/slice/posts.ts";
 import { Box, Container, FormControl, FormLabel, Input, Textarea, Button, Heading } from "@chakra-ui/react";
 
 const CreatePost = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const dispatch = useDispatch();
+  const dispatch = useDispatch();  
+  const user = "currentUser"; // Replace with actual user data
+  const time = new Date().toISOString(); // Get current time
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(createPost({ title, content }));
+    const response = await axios.post('http://localhost:5000/api/posts', { title, content, user, time });
+    dispatch(createPost(response.data));
     // Optionally redirect or show a success message
   };
 
