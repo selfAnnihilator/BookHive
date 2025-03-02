@@ -1,5 +1,8 @@
 "use client";
 import { useState } from "react";
+import { useToast } from "@chakra-ui/react";
+import { toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 import { useDispatch } from "react-redux";
 import axios from "axios";
 import { createPost } from "../../redux/slice/posts.ts";
@@ -8,7 +11,8 @@ import { Box, Container, FormControl, FormLabel, Input, Textarea, Button, Headin
 const CreatePost = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const dispatch = useDispatch();  
+  const dispatch = useDispatch();
+  const toast = useToast();
   const user = "currentUser"; // Replace with actual user data
   const time = new Date().toISOString(); // Get current time
 
@@ -16,7 +20,15 @@ const CreatePost = () => {
     e.preventDefault();
     const response = await axios.post('http://localhost:5000/api/posts', { title, content, user, time });
     dispatch(createPost(response.data));
-    window.location.href = '/dashboard'; // Redirect to dashboard after successful submission
+    toast({
+      variant: "solid",
+      status: "success",
+      description: "Post created successfully!",
+      position: "top",
+    });
+    setTimeout(() => {
+      window.location.href = '/dashboard';
+    }, 1500); // Redirect after 1.5 seconds to allow user to see the notification
   };
 
   return (
