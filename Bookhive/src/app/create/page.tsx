@@ -16,7 +16,7 @@ const CreatePost = () => {
     e.preventDefault();
     const response = await axios.post('http://localhost:5000/api/posts', { title, content, user, time });
     dispatch(createPost(response.data));
-    // Optionally redirect or show a success message
+    window.location.href = '/dashboard'; // Redirect to dashboard after successful submission
   };
 
   return (
