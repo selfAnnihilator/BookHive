@@ -1,9 +1,18 @@
 const express = require('express');
 const cors = require('cors');
+const session = require('express-session');
 require('dotenv').config();
 const connectDB = require('./config/db');
 
 const app = express();
+
+// Session middleware
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'your-secret-key',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: process.env.NODE_ENV === 'production' }
+}));
 
 const postRoutes = require('./routes/postRoutes'); // Correct relative path for post routes
 

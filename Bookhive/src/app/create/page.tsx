@@ -3,7 +3,8 @@ import { useState } from "react";
 import { useToast } from "@chakra-ui/react";
 import { toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getCookie } from 'cookies-next';
 import axios from "axios";
 import { createPost } from "../../redux/slice/posts.ts";
 import { Box, Container, FormControl, FormLabel, Input, Textarea, Button, Heading } from "@chakra-ui/react";
@@ -13,12 +14,21 @@ const CreatePost = () => {
   const [content, setContent] = useState("");
   const dispatch = useDispatch();
   const toast = useToast();
-  const user = "currentUser"; // Replace with actual user data
+  const authData = useSelector((state) => state.auth.authData); // Access user data from Redux state
+  const user = `${authData.firstName} ${authData.lastName}`; // Retrieve full name from Redux state
   const time = new Date().toISOString(); // Get current time
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await axios.post('http://localhost:5000/api/posts', { title, content, user, time });
+    const token = getCookie('_auth_token');
+    const response = await axios.post('http://localhost:5000/api/posts', 
+      { title, content, user, time },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }
+    );
     dispatch(createPost(response.data));
     toast({
       variant: "solid",
