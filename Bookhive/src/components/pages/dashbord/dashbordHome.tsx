@@ -38,8 +38,8 @@ const DashboardHome = () => {
           Hi, {userData?.firstName || "Good day"} 👋
         </Text>
       </Box>
-      <DashboardAdsHero />
-      <DashboardFlexBox />
+      {/* <DashboardAdsHero />
+      <DashboardFlexBox /> */}
     </Box>
   );
 };
