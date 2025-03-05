@@ -15,13 +15,11 @@ app.use(session({
 }));
 
 const postRoutes = require('./routes/postRoutes'); // Correct relative path for post routes
-const bookClubRoutes = require('./routes/bookClubRoutes'); // Import book club routes
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 app.use('/api', postRoutes); // Use post routes
-app.use('/api', bookClubRoutes); // Use book club routes
 
 // Database connection
 connectDB();
