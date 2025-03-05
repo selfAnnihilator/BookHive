@@ -42,23 +42,40 @@ const CreateBookClub = () => {
           <Box position="relative" borderRadius="full" overflow="hidden" width="150px" height="150px" border="2px dashed green" mb={6}>
             <Input
               type="file"
-              onChange={(e) => setImage(e.target.files[0])}
+              onChange={(e) => {
+                const file = e.target.files[0];
+                setImage(file);
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                  const imgElement = document.getElementById('image-preview');
+                  if (imgElement) {
+                    imgElement.src = reader.result;
+                  }
+                };
+                if (file) {
+                  reader.readAsDataURL(file);
+                }
+              }}
               focusBorderColor="green.400"
               display="none"
               id="image-upload"
             />
+            <img id="image-preview" src="" alt="Selected" style={{ borderRadius: '50%', width: '150px', height: '150px', objectFit: 'cover' }} />
             <label htmlFor="image-upload">
-              <Button
-                position="absolute"
-                top="50%"
-                left="50%"
-                transform="translate(-50%, -50%)"
-                colorScheme="green"
-              >
-                Browse
-              </Button>
+              
             </label>
           </Box>
+              <Button
+                position="absolute"
+                bottom="70px"
+                right="46%"
+                colorScheme="green"
+                borderRadius="20px" // Adjust this value to make the button rounder
+                onClick={() => document.getElementById('image-upload').click()} // Trigger file input
+              >
+              Edit
+              </Button>
+
         </Box>
         <FormLabel>Club Name</FormLabel>
         <Input
