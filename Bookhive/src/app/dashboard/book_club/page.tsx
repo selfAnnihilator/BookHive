@@ -1,9 +1,11 @@
-import CommingSoon from "@/components/atom/comming_soon";
-import { Box, Text, Flex } from "@chakra-ui/react";
-import React from "react";
-import { FcReading } from "react-icons/fc";
+"use client";
+import CommingSoon from "components/atom/comming_soon";
+import { Box, Text, Flex, Container, FormControl, FormLabel, Input, Button, Heading, useToast } from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import axios from "axios";
 
-<<<<<<< HEAD
+
 const BookClubPage = () => {
   const router = useRouter();
   const [clubName, setClubName] = useState("");
@@ -52,8 +54,8 @@ const BookClubPage = () => {
     fetchBookClubs();
   }, []);
 
-return (
-  <Container maxW="container.md" py={8}>
+  return (
+    <Container maxW="container.md" py={8}>
       <FormControl mb={6} mt={8}>
         <FormLabel>Search Book Clubs</FormLabel>
         <Input
@@ -71,7 +73,7 @@ return (
         right="20px"
         onClick={() => router.push('/dashboard/create')}
       >
-      Create Book Club
+        Create Book Club
       </Button>
       <Box mt={4}>
         {bookClubs.map((club) => (
@@ -82,14 +84,7 @@ return (
         ))}
       </Box>
     </Container>
-=======
-const BookClubs = () => {
-  return (
-    <Box>
-      <CommingSoon />
-    </Box>
->>>>>>> parent of b347b14 (made the book club navigation page)
   );
 };
 
-export default BookClubs;
+export default BookClubPage;

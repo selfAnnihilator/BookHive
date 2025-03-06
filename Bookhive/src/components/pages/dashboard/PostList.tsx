@@ -12,7 +12,7 @@ const PostList = () => {
       try {
         const response = await axiosInstance.get('/api/posts');
         console.log('Fetched posts:', response.data);
-        setPosts(response.data);
+        setPosts(response.data.sort((a, b) => new Date(b.time) - new Date(a.time)));
       } catch (err) {
         setError('Failed to fetch posts');
         console.error('Fetch error:', err);
