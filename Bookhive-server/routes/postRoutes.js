@@ -1,6 +1,7 @@
 const express = require('express');
 const Post = require('../models/postModel');
 const { protect } = require('../middleware/authMiddleware');
+const BookClub = require('../models/bookClubModel'); // Import the BookClub model
 
 const router = express.Router();
 
@@ -22,6 +23,15 @@ router.get('/posts', async (req, res) => {
   try {
     const posts = await Post.find({});
     res.status(200).json(posts);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+router.get('/bookclubs', async (req, res) => {
+  try {
+    const bookClubs = await BookClub.find({});
+    res.status(200).json(bookClubs);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
