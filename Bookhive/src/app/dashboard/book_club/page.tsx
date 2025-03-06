@@ -10,7 +10,11 @@ const BookClubPage = () => {
   const router = useRouter();
   const [clubName, setClubName] = useState("");
   const [description, setDescription] = useState("");
-  const [bookClubs, setBookClubs] = useState([]);
+  const [bookClubs, setBookClubs] = useState([
+    { id: 1, name: "Fantasy Book Club", description: "A club for fantasy lovers." },
+    { id: 2, name: "Science Fiction Book Club", description: "Explore the universe through sci-fi." },
+    { id: 3, name: "Mystery Book Club", description: "Unravel the mysteries with us." },
+  ]);
   const toast = useToast();
 
   const handleCreateClub = async (e) => {
@@ -47,11 +51,11 @@ const BookClubPage = () => {
   };
 
   useEffect(() => {
-    const fetchBookClubs = async () => {
-      const response = await axios.get('http://localhost:5000/api/bookclubs');
-      setBookClubs(response.data);
-    };
-    fetchBookClubs();
+    // const fetchBookClubs = async () => {
+    //   const response = await axios.get('http://localhost:5000/api/bookclubs');
+    //   setBookClubs(response.data);
+    // };
+    // fetchBookClubs();
   }, []);
 
   return (
@@ -75,11 +79,12 @@ const BookClubPage = () => {
       >
         Create Book Club
       </Button>
-      <Box mt={4}>
-        {bookClubs.map((club) => (
-          <Box key={club.id} borderWidth="1px" borderRadius="lg" p={4} mb={4}>
-            <Heading size="md">{club.name}</Heading>
-            <Button colorScheme="blue" mt={2}>Join Club</Button>
+      <Box mt={4} display="flex" flexDirection="column" alignItems="flex-start">
+        {bookClubs.map((club) => ( 
+          <Box key={club.id} borderWidth="1px" borderRadius="lg" p={4} mb={4} width="100%">
+            <Heading size="md">{club.name}</Heading> 
+            <Text>{club.description}</Text>
+            <Button colorScheme="blue" mt={2}>Join Club</Button> 
           </Box>
         ))}
       </Box>
