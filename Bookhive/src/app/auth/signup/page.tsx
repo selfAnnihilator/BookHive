@@ -153,6 +153,7 @@ const SignUp = () => {
           isErrorMessage={formik.errors.gender}
           size={"lg"}
           label="Gender">
+          <option>Select</option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
         </SelectionField>
